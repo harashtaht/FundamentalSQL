@@ -8,7 +8,7 @@ use Sales;
 CREATE SCHEMA IF NOT EXISTS Sales;
 
 USE SALES;
-
+-- Testing
 # 				(bytes)							Example
 #				max size	storage				len(symbol)	size(bytes)
 # 'CHAR(5)' 	255			Fixed		'James	5			5
