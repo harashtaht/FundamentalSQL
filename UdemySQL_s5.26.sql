@@ -18,3 +18,17 @@ USE SALES;
 # 'ENUM('M', 'F')					
 
 
+# Datatypes : INT
+
+# 1. integer: INTEGER
+# 2. fixed int : DECIMAL, NUMERIC
+# 2.B. numeric: e.g. Salaries; NUMERIC (precision, scales)
+# 		e.g. NUMERIC (7,2): $ 75,000.50
+# 3. floating-point: 
+
+-- Lesson 38: Creating a Table
+
+USE Sales;
+
+-- show tables;
+
