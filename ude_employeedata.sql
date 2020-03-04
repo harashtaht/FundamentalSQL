@@ -251,3 +251,5 @@ SELECT DISTINCT gender FROM employees; ##similar to unique
 
 -- Exercise 102
 
+SELECT DISTINCT hire_date FROM employees;
+
