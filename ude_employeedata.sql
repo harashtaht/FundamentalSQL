@@ -134,3 +134,21 @@ WHERE hire_date LIKE ('2000%');
 SELECT *
 FROM employees
 WHERE emp_no LIKE ('1____');
+
+
+## L89: Wildcard Characters
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name LIKE ('Jack%');
+
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name NOT LIKE ('Jack%');
