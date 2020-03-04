@@ -75,4 +75,12 @@ DROP TABLE SALES;
 -- DATETIME : YYYYMMDD HH:MM:SS[.fraction] '2018-07-25 09:00:00'
 -- TIMESTAMP: used for a well defined, exact point of time. 
 -- '2018-07-25 09:00:00' UTC (Universal Time C)
--- 
+
+-- Written in Quotes
+-- -> string, date, and time data types
+-- -> i.e. CHAR, VARCHAR, DATE, DATETIME, TIMESTAMP
+
+-- Not written in quotes
+-- -> numeric data types
+-- -> i.e. INTEGER, DECIMAL, NUMERIC, FLOAT, DOUBLE
+
