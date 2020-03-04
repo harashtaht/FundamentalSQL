@@ -243,4 +243,7 @@ MODIFY headquarters_phone_number VARCHAR(255) NULL;
 ALTER TABLE companies
 CHANGE COLUMN headquarters_phone_number headquarters_phone_number VARCHAR(255) NOT NULL;
 
--- 
+-- Null value is a missing value.
+
+-- Assigned by user: 0, None
+-- Assigned by computer: NULL
