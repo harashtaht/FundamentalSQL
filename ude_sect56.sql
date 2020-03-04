@@ -107,6 +107,19 @@ PRIMARY KEY (purchase_number)
 
 show tables;
 
--- L47
+-- S6.L47
+
+-- DROP TABLE CUSTOMERS;
+
+CREATE TABLE customers
+(
+	customer_id INT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    email_address VARCHAR(255),
+    number_of_complaints INT,
+    PRIMARY KEY (customer_id)
+);
+
 
     
