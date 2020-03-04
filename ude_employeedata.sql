@@ -328,16 +328,42 @@ ORDER BY first_name DESC;
 
 ### L111: Using Aliases (AS)
 
-SELECT first_name, COUNT(
-    first_name) AS names_count
+SELECT 
+first_name, COUNT(first_name) AS names_count
 FROM
     employees
 GROUP BY first_name
 ORDER BY first_name DESC;
 
+-- Exercise
 
+select * from salaries LIMIT 10000;
+
+SELECT salary, count(emp_no) AS emps_with_same_salary
+FROM salaries
+WHERE salary > 80000
+GROUP BY salary
+ORDER BY emps_with_same_salary DESC;
+
+SELECT salary, count(emp_no) AS emps_with_same_salary
+FROM salaries
+WHERE salary > 80000
+GROUP BY salary
+ORDER BY salary;
+
+
+SELECT DISTINCT salary
+FROM salaries;
 
 ### L114: HAVING
+
+
+
+
+
+
+
+
 
 
 ### L117: WHERE vs HAVING
