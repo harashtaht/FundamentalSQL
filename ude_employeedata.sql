@@ -245,3 +245,9 @@ where salary> 150000;
 
 ### L101: SELECT DISTINCT
 
+SELECT gender FROM employees;
+
+SELECT DISTINCT gender FROM employees; ##similar to unique
+
+-- Exercise 102
+
