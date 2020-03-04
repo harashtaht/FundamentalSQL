@@ -282,3 +282,42 @@ from dept_manager;
 
 select * from dept_manager;
 
+
+## L107: ORDER BY
+
+SELECT *
+FROM employees
+ORDER BY first_name;
+
+SELECT *
+FROM employees
+ORDER BY first_name DESC;
+
+SELECT *
+FROM employees
+ORDER BY emp_no DESC;
+
+SELECT *
+FROM employees
+ORDER BY first_name, last_name ASC;
+
+-- Exercise
+
+SELECT *
+FROM employees
+ORDER BY hire_date DESC;
+
+### L110: GROUP BY
+
+
+
+### L111: Using Aliases
+
+### L114: HAVING
+
+
+### L117: WHERE vs HAVING
+
+
+### L21: LIMIT
+
