@@ -84,3 +84,7 @@ DROP TABLE SALES;
 -- -> numeric data types
 -- -> i.e. INTEGER, DECIMAL, NUMERIC, FLOAT, DOUBLE
 
+-- BLOB datatype
+-- Binary Large OBject
+-- Refers to a file of binary data - 0 and 1
+-- .doc, .wav, .jpg, .xml, .xlsx
