@@ -143,7 +143,9 @@ SELECT
 FROM
     employees
 WHERE
-    first_name LIKE ('Jack%');
+    first_name LIKE ('%Jack%');
+    
+
 
 
 SELECT 
@@ -151,4 +153,4 @@ SELECT
 FROM
     employees
 WHERE
-    first_name NOT LIKE ('Jack%');
+    first_name NOT LIKE ('%Jack%');
