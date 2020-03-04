@@ -55,3 +55,13 @@ SELECT *
 FROM employees
 WHERE first_name = 'Kellie' OR first_name = 'Aruna';
 
+
+## L78: Operator Precedence
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    last_name = 'Denis'
+        AND (gender = 'M' OR gender = 'F');
+        
