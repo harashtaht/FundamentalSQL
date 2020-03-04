@@ -159,8 +159,9 @@ show tables;
 -- FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 -- );
 
-ALTER TABLE sales
-ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE;
-
-ALTER TABLE sales
-DROP FOREIGN KEY `sales_ibfk_1`;
+-- ALTER TABLE sales
+-- ADD FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE;
+-- 
+-- ALTER TABLE sales
+-- DROP FOREIGN KEY `sales_ibfk_1`;
+-- 
