@@ -239,7 +239,7 @@ FROM employees
 WHERE gender = 'F' 
 AND hire_date > '2000-01-01';
 
-select * 
+select *
 from salaries
 where salary> 150000;
 
@@ -252,4 +252,22 @@ SELECT DISTINCT gender FROM employees; ##similar to unique
 -- Exercise 102
 
 SELECT DISTINCT hire_date FROM employees;
+
+
+### L104: Aggregate Functions
+
+SELECT COUNT(*) 
+FROM employees;
+
+SELECT COUNT(emp_no)
+FROM employees;
+
+SELECT COUNT(*) 
+FROM employees
+WHERE first_name LIKE ('Mar%');
+
+SELECT COUNT(DISTINCT first_name)
+FROM employees;
+
+-- Exercise 105
 
