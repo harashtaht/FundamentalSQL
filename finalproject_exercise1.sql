@@ -32,3 +32,15 @@ from employeeattrition
 WHERE JobRole = 'Manager' and MonthlyIncome > (SELECT AVG(MonthlyIncome)
 from employeeattrition
 WHERE JobRole = 'Sales Executive');
+
+
+-- Test dari Baron
+
+SELECT * from employeeattrition;
+
+SELECT MAX(Education) from employeeattrition;
+
+
+select count(*), Education from employeeattrition 
+where MonthlyIncome > (select max(MonthlyIncome) from employeeattrition where Education=3) 
+GROUP BY Education;
