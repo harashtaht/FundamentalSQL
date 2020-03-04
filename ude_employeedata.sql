@@ -231,3 +231,17 @@ WHERE hire_date >= '2000-01-01';
 SELECT *
 FROM employees
 WHERE hire_date <= '1985-02-01';
+
+-- Exercise 
+
+SELECT *
+FROM employees
+WHERE gender = 'F' 
+AND hire_date > '2000-01-01';
+
+select * 
+from salaries
+where salary> 150000;
+
+### L101: SELECT DISTINCT
+
