@@ -372,16 +372,51 @@ HAVING names_count>250
 -- ORDER BY first_name;
 ORDER BY names_count DESC;
 
+-- Exercise
 
+select * from employees;
 
+-- Answer
+SELECT 
+    emp_no, AVG(salary) as avg_salary
+FROM
+    salaries
+GROUP BY
+	emp_no
+HAVING
+	avg_salary >120000
+ORDER BY
+	emp_no;
 
+-- Query1
 
+-- SELECT *, AVG(salary)
+-- FROM salaries
+-- -- WHERE salary>12000
+-- GROUP BY emp_no
+-- HAVING salary>12000
+-- ORDER by emp_no;
 
-
-
+-- Query 2
+-- SELECT
+--     *, AVG(salary)
+-- FROM
+--     salaries
+-- GROUP BY emp_no
+-- HAVING AVG(salary) > 120000;
 
 
 ### L117: WHERE vs HAVING
+
+
+
+
+
+
+
+
+
+
 
 
 ### L21: LIMIT
