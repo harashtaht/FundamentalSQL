@@ -357,6 +357,21 @@ FROM salaries;
 
 ### L114: HAVING
 
+SELECT *
+FROM employees
+WHERE hire_date >= '2000-01-01';
+
+SELECT *
+FROM employees
+HAVING hire_date >= '2000-01-01';
+
+SELECT first_name, COUNT(first_name) AS names_count
+FROM employees
+GROUP BY first_name
+HAVING names_count>250
+-- ORDER BY first_name;
+ORDER BY names_count DESC;
+
 
 
 
