@@ -201,3 +201,18 @@ VALUES ('Peter', 'Figaro', 'M')
 ;
 
 SELECT * from customers;
+
+ALTER TABLE customers
+ALTER COLUMN number_of_complaints DROP DEFAULT;
+
+show tables;
+
+ALTER TABLE customers
+ADD company_name VARCHAR(255) UNIQUE KEY,
+ADD headquarters_phone_number VARCHAR(255) DEFAULT "X";
+
+SELECT * FROM customers;-- 
+
+INSERT INTO customers (first_name, last_name, gender, company_name)
+VALUES ('Babo', 'Walaluyu', 'F', 'PT. Meninggal');
+
