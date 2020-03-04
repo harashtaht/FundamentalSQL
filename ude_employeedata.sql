@@ -187,3 +187,12 @@ SELECT *
 FROM departments
 WHERE dept_no BETWEEN 'd003' AND 'd006';
 
+### L97: IS NOT NULL - IS NULL
+
+SELECT *
+FROM employees
+WHERE first_name IS NOT NULL;
+
+SELECT *
+FROM employees
+WHERE first_name IS NOT NULL;
