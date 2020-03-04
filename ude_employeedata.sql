@@ -309,6 +309,14 @@ ORDER BY hire_date DESC;
 
 ### L110: GROUP BY
 
+SELECT 
+    first_name
+FROM
+    employees
+GROUP BY first_name;
+
+
+
 
 
 ### L111: Using Aliases
