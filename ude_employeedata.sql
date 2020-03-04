@@ -50,3 +50,8 @@ SELECT *
 FROM employees
 WHERE gender = 'M' AND (first_name = 'Denis' OR first_name= 'Elvis');
     
+-- Ex 75
+SELECT *
+FROM employees
+WHERE first_name = 'Kellie' OR first_name = 'Aruna';
+
