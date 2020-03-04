@@ -408,14 +408,28 @@ ORDER BY
 
 ### L117: WHERE vs HAVING
 
+SELECT first_name, COUNT(first_name) AS names_count
+FROM employees
+WHERE hire_date > '1999-01-01'
+GROUP BY first_name
+HAVING COUNT(first_name) < 200
+ORDER BY first_name DESC;
 
+-- Exercise
 
+SELECT emp_no, COUNT(emp_no) as times_signed
+FROM dept_emp
+WHERE from_date > '2000-01-01'
+GROUP BY emp_no
+HAVING times_signed>1
+ORDER BY emp_no; #196rows
 
-
-
-
-
-
+SELECT emp_no
+FROM dept_emp
+WHERE from_date > '2000-01-01'
+GROUP BY emp_no
+HAVING COUNT(from_date)>1
+ORDER BY emp_no; #196rows
 
 
 
