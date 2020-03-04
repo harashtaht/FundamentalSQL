@@ -620,3 +620,66 @@ DELETE	:	removes records row by row.
 ### Section 13: Aggregate Functions
 ### Lesson 144: COUNT()
 
+SELECT *
+FROM salaries
+ORDER BY salary DESC
+LIMIT 10;
+
+SELECT COUNT(salary)
+FROM salaries;
+
+SELECT COUNT(DISTINCT from_date)
+FROM salaries; #6392
+
+/* Aggregate functions typically ignore null values.
+But only if you have indicated a specific column name within the parantheses.
+The alternative is to use the wildcard.
+COUNT(*)
+*/
+
+SELECT COUNT(DISTINCT dept_no)
+FROM dept_emp
+LIMIT 10;
+
+### Lesson 147 - SUM()
+
+SELECT
+SUM(salary)
+FROM salaries
+WHERE from_date > '1997-01-01';
+
+SELECT
+*
+FROM salaries
+LIMIT 10;
+
+### Lesson 150 - MAX() MIN()
+
+SELECT MAX(salary)
+FROM salaries;
+
+SELECT MIN(salary)
+FROM salaries;
+
+
+### Lesson 151 - AVG()
+
+SELECT AVG(salary)
+FROM salaries
+WHERE from_date > '1997-01-01';
+
+SELECT *
+FROM salaries
+LIMIT 10;
+
+
+### Lesson 156 - ROUND()
+
+SELECT ROUND(AVG(salary),2)
+FROM salaries
+WHERE from_date > '1997-01-01';
+
+
+### LESSON 159 - COALESCE()
+
+
