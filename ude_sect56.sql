@@ -165,3 +165,11 @@ show tables;
 -- ALTER TABLE sales
 -- DROP FOREIGN KEY `sales_ibfk_1`;
 -- 
+
+DROP TABLE sales;
+DROP TABLE customers;
+DROP TABLE items;
+dROP TABLE companies;
+
+
+-- L54
