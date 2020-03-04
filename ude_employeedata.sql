@@ -1,4 +1,4 @@
-# L66 : SELECT.. FROM..
+## L66 : SELECT.. FROM..
 
 show databases;
 
@@ -16,10 +16,15 @@ SELECT
 FROM
     employees;
 
-# Exercise
+-- Exercise
 
 select * from departments;
 
 SELECT dept_name FROM departments;
 
-SELECT * from employees WHERE first_name= 'Denis';
+
+## L70
+SELECT * from employees WHERE first_name= 'Denis'; #232
+
+#- Exercise
+SELECT * FROM employees WHERE first_name= "Elvis"; #246
