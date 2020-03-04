@@ -64,4 +64,8 @@ FROM
 WHERE
     last_name = 'Denis'
         AND (gender = 'M' OR gender = 'F');
-        
+
+SELECT * 
+FROM EMPLOYEES
+WHERE gender = 'F' AND
+(first_name= 'Kellie' OR first_name= ' Aruna');
