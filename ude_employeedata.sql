@@ -107,5 +107,18 @@ FROM
 WHERE
     first_name  NOT IN ('John' , 'Mark', 'Jacob');
     
+## Lesson 86: LIKE - NOT LIKE
+
+SELECT * FROM employees WHERE first_name LIKE ('Mar%');
+
+SELECT * FROM employees WHERE first_name LIKE ('%ar%'); #name with 'ar' in between other strings
+
+SELECT * FROM employees WHERE first_name LIKE ('ar%'); #ends with 'ar'
+
+SELECT * FROM employees WHERE first_name LIKE ('Mar_'); #4 digits
+
+SELECT * FROM employees WHERE first_name NOT LIKE ('Mar%');
+
+-- SQL is not Case Sensitive
 
 
