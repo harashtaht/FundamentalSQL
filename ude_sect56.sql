@@ -247,3 +247,25 @@ CHANGE COLUMN headquarters_phone_number headquarters_phone_number VARCHAR(255) N
 
 -- Assigned by user: 0, None
 -- Assigned by computer: NULL
+
+
+-- Section 7: SQL Best Practices
+
+/*
+Testing satu
+Dua tiga
+Limalimalima
+*/
+
+# shortcut for beautifying query-> cmd+B
+
+CREATE TABLE IF NOT EXISTS test (
+    numbers INT(10),
+    words VARCHAR(10)
+);
+
+SHOW TABLES;
+
+DROP TABLE companies;
+DROP TABLE customers;
+
