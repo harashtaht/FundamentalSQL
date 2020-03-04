@@ -271,3 +271,14 @@ FROM employees;
 
 -- Exercise 105
 
+select count(*) from salaries;
+
+select count(*)
+FROM salaries
+WHERE salary >= '100000';
+
+select count(*)
+from dept_manager;
+
+select * from dept_manager;
+
