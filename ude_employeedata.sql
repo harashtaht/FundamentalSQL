@@ -69,3 +69,24 @@ SELECT *
 FROM EMPLOYEES
 WHERE gender = 'F' AND
 (first_name= 'Kellie' OR first_name= ' Aruna');
+
+
+## L81: IN - NOT IN
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name IN ('Cathie' , 'Mark', 'Nathan');
+    
+
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name NOT IN ('Cathie' , 'Mark', 'Nathan');
+
+
