@@ -216,3 +216,31 @@ SELECT * FROM customers;--
 INSERT INTO customers (first_name, last_name, gender, company_name)
 VALUES ('Babo', 'Walaluyu', 'F', 'PT. Meninggal');
 
+CREATE TABLE companies
+(
+	company_id INT AUTO_INCREMENT,
+    headquarters_phone_number VARCHAR(255),
+    company_name VARCHAR(255) NOT NULL,
+PRIMARY KEY (company_id)
+);
+
+
+-- MODIFY is if the column is not changed, but to be updated / modified
+
+
+ALTER TABLE companies
+MODIFY company_name VARCHAR(255) NULL;
+
+ALTER TABLE companies
+MODIFY company_name VARCHAR(255) NOT NULL;
+
+INSERT INTO companies (headquarters_phone_number, company_name)
+VALUES ('+27 92910-2020', 'The company AA');
+
+ALTER TABLE companies
+MODIFY headquarters_phone_number VARCHAR(255) NULL;
+
+ALTER TABLE companies
+CHANGE COLUMN headquarters_phone_number headquarters_phone_number VARCHAR(255) NOT NULL;
+
+-- 
