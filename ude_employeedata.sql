@@ -559,4 +559,64 @@ VALUES(
     'Business Analysis'
     );
     
-    
+
+########
+########
+######## Section
+######## 11
+
+
+### Section 12 : The DELETE Statement
+
+SELECT *
+FROM employees
+ORDER BY emp_no DESC;
+
+SELECT *
+FROM employees
+WHERE emp_no = 999903;
+
+SELECT *
+FROM employees
+WHERE emp_no = 999902;
+## datas in both tables are deleted due to the DELETE CASCADE
+
+
+DELETE FROM employees
+WHERE emp_no = 999903;
+
+ROLLBACK; #only worked if COMMIT was done
+
+SELECT *
+FROM departments_dup
+ORDER BY dept_no;
+
+DELETE FROM departments_dup;
+
+SELECT *
+FROM departments;
+
+DELETE
+FROM departments
+WHERE dept_no= 'd010';
+
+
+### L143: DROP vs TRUNCATE cs DELETE
+
+/*
+DROP: 		won't be able to roll back to its initial state, or to the last COMMIT statement. 
+			only use when you sure you aren't going to use it anymore.
+
+TRUNCATE:	auto-increment values will be reset.
+			DELETE without WHERE.
+			quicker to run than DELETE.
+            
+DELETE	:	removes records row by row.
+			auto-increment values will not be reseted.
+            
+*/
+
+###
+### Section 13: Aggregate Functions
+### Lesson 144: COUNT()
+
