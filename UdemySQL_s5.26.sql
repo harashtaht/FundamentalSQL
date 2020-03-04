@@ -66,7 +66,7 @@ SELECT * FROM sales.customers;
 
 select * from sales.sales;
 
-DROP TABLE SALES;
+-- DROP TABLE SALES;
 
 
 -- Other Useful Data Types
@@ -88,3 +88,22 @@ DROP TABLE SALES;
 -- Binary Large OBject
 -- Refers to a file of binary data - 0 and 1
 -- .doc, .wav, .jpg, .xml, .xlsx
+
+-- PRIMARY KEY
+
+-- CREATE TABLE sales
+show databases;
+use Sales;
+show tables;
+
+CREATE TABLE sales
+(
+	purchase_number INT AUTO_INCREMENT,
+    date_of_purchase DATE,
+    customer_id INT,
+    item_code VARCHAR(10),
+PRIMARY KEY (purchase_number)
+);
+
+show tables;
+    
