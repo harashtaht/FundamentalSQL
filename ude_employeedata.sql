@@ -145,6 +145,15 @@ FROM
 WHERE
     first_name LIKE ('%Jack%');
     
+
+
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name NOT LIKE ('%Jack%');
+    
 ## L92: BETWEEN AND 
 
 SELECT *
@@ -155,12 +164,26 @@ SELECT *
 FROM employees
 WHERE hire_date NOT BETWEEN '1990-01-01' AND '2000-01-01';
 
+-- Exercise
+
+SELECT * FROM salaries;
+
+SELECT *
+FROM salaries
+WHERE salary BETWEEN '66000' AND '70000';
+
+SELECT *
+FROM salaries
+WHERE salary BETWEEN 66000 AND 70000;
+
+SELECT *
+FROM employees
+WHERE emp_no NOT BETWEEN '10004' AND '10012';
 
 
+select * from departments;
 
-SELECT 
-    *
-FROM
-    employees
-WHERE
-    first_name NOT LIKE ('%Jack%');
+SELECT *
+FROM departments
+WHERE dept_no BETWEEN 'd003' AND 'd006';
+
