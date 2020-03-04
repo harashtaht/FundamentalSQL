@@ -67,3 +67,12 @@ SELECT * FROM sales.customers;
 select * from sales.sales;
 
 DROP TABLE SALES;
+
+
+-- Other Useful Data Types
+
+-- DATE : YYYYMMDD e.g. '2018-07-25'
+-- DATETIME : YYYYMMDD HH:MM:SS[.fraction] '2018-07-25 09:00:00'
+-- TIMESTAMP: used for a well defined, exact point of time. 
+-- '2018-07-25 09:00:00' UTC (Universal Time C)
+-- 
