@@ -431,7 +431,11 @@ GROUP BY emp_no
 HAVING COUNT(from_date)>1
 ORDER BY emp_no; #196rows
 
-
-
 ### L21: LIMIT
 
+SELECT * 
+FROM salaries
+ORDER BY salary DESC
+LIMIT 10;
+
+SELECT * FROM dept_emp LIMIT 100;
