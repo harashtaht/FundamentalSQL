@@ -682,4 +682,68 @@ WHERE from_date > '1997-01-01';
 
 ### LESSON 159 - COALESCE()
 
+SELECT * 
+FROM departments_dup;
+-- commit;
 
+ALTER TABLE departments_dup
+CHANGE COLUMN dept_name dept_name VARCHAR(40) NULL;
+
+INSERT INTO departments_dup(dept_no)
+VALUES ('d010'), ('d011');
+
+ALTER TABLE employees.departments_dup
+ADD COLUMN dept_manager VARCHAR(255) NULL AFTER dept_name;
+
+COMMIT;
+
+### Lesson 160: IFNULL() and COALESCE()
+
+SELECT * 
+FROM departments_dup
+ORDER BY dept_no;
+
+SELECT 
+	dept_no,
+	IFNULL(dept_name,
+			'Department name not provided') as dept_name
+FROM departments_dup
+ORDER BY dept_no;
+
+
+SELECT 
+	dept_no,
+    dept_name,
+	COALESCE(dept_manager,dept_name,'N/A') as dept_manager
+FROM departments_dup
+ORDER BY dept_no;
+
+SELECT 
+	dept_no,
+    dept_name,
+	COALESCE('Please fill Department Manager') as tobefilled
+FROM departments_dup
+ORDER BY dept_no;
+
+SELECT
+	dept_no, dept_name,
+    COALESCE(dept_no, dept_name) as dept_info
+FROM departments_dup
+ORDER BY dept_no DESC;
+
+SELECT
+    IFNULL(dept_no, 'N/A') as dept_no,
+    IFNULL(dept_name, 'Department name not provided') as dept_name,
+	COALESCE(dept_no, dept_name) AS dept_info
+FROM departments_dup
+ORDER BY dept_no DESC;
+
+####
+#### Section 14: JOINS
+#### UNFINISHED
+
+
+
+
+####
+#### Section 15: Subqueries
