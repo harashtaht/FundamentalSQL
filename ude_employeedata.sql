@@ -742,8 +742,16 @@ ORDER BY dept_no DESC;
 #### Section 14: JOINS
 #### UNFINISHED
 
+select * from departments_dup;
+
+ALTER TABLE departments_dup
+CHANGE COLUMN dept_no dept_no CHAR(4) NULL;
+
+ALTER TABLE departments_dup
+CHANGE COLUMN dept_name dept_name VARCHAR(40)
 
 
 
 ####
 #### Section 15: Subqueries
+
