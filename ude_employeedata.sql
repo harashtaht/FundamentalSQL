@@ -749,14 +749,71 @@ select * from dept_emp;
 #### L166: Introduction to JOINS
 
 -- 
--- select * from departments_dup;
+select * from departments_dup
+ORDER BY dept_no;
+
+select * from departments
+ORDER BY dept_no;
+
+ALTER TABLE departments_dup
+DROP dept_manager;
+
+ALTER TABLE departments_dup
+CHANGE COLUMN dept_no dept_no CHAR(4) NULL;
 -- 
--- ALTER TABLE departments_dup
--- CHANGE COLUMN dept_no dept_no CHAR(4) NULL;
--- 
--- ALTER TABLE departments_dup
--- CHANGE COLUMN dept_name dept_name VARCHAR(40)
--- 
+ALTER TABLE departments_dup
+CHANGE COLUMN dept_name dept_name VARCHAR(40)
+NULL;
+
+INSERT INTO departments_dup (dept_name)
+VALUES ("Public Relations");
+
+DELETE FROM departments_dup 
+WHERE dept_no = 'd002';
+
+select * from departments_dup order by dept_no;
+
+show tables;
+select * from dept_manager;
+
+CREATE TABLE dept_manager_dup (
+    emp_no INT(11) NOT NULL,
+    dept_no CHAR(4) NULL,
+    from_date DATE NOT NULL,
+    to_date DATE NULL
+);
+
+SELECT 
+    *
+FROM
+    dept_manager_dup;
+
+
+INSERT INTO dept_manager_dup
+SELECT * FROM dept_manager;
+
+INSERT INTO dept_manager_dup (emp_no, from_date)
+
+VALUES                (999904, '2017-01-01'),
+
+                                (999905, '2017-01-01'),
+
+                               (999906, '2017-01-01'),
+
+                               (999907, '2017-01-01');
+                               
+DELETE FROM dept_manager_dup
+WHERE dept_no = 'd001';
+
+-- SELECT * FROM departments_dup;
+-- INSERT INTO departments_dup (dept_name)
+-- values ('Public Relations');
+
+DELETE FROM departments_dup WHERE dept_no = 'd002';
+
+select * from departments_dup;
+
+### L170: Inner Join - Part 1
 
 
 ####
