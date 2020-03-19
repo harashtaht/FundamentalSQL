@@ -962,7 +962,7 @@ SELECT
 FROM
     employees e
         LEFT JOIN
-    dept_manager dm ON e.emp_no = dm.emp_no
+    departments dm ON e.emp_no = dm.emp_no
 WHERE
     e.last_name = 'Markovitch'
 ORDER BY dm.dept_no DESC , e.emp_no;
@@ -971,10 +971,58 @@ select * from dept_manager;
 
 select * from employees;
 select * from dept_manager;
+select * from departments;
 
 ## L180: RIGHT JOIN
 
+## L181: The new and Old Join Syntax (Inner Join)
 
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    dept_manager_dup m
+        INNER JOIN
+    departments_dup d ON m.dept_no = d.dept_no
+ORDER BY m.dept_no;
+
+select * from departments_dup;
+select * from dept_manager_dup;
+
+-- WHERE
+
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    dept_manager_dup m,
+    departments_dup d
+WHERE
+    m.dept_no = d.dept_no
+ORDER BY m.dept_no;
+
+
+-- Exercise
+select * from dept_manager;
+select * from employees;
+
+SELECT 
+    m.emp_no, e.first_name, e.last_name, m.dept_no, e.hire_date
+FROM
+    dept_manager m,
+    employees e
+WHERE
+    m.emp_no = e.emp_no
+ORDER BY emp_no;
+
+-- JOIN
+SELECT 
+    m.emp_no, e.first_name, e.last_name, m.dept_no, e.hire_date
+FROM
+    dept_manager m
+    JOIN
+    employees e
+ON
+    m.emp_no = e.emp_no
+ORDER BY emp_no;
 
 ####
 #### Section 15: Subqueries
