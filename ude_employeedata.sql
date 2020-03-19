@@ -740,19 +740,24 @@ ORDER BY dept_no DESC;
 
 ####
 #### Section 14: JOINS
+
+show databases;
+use udemy_employee;
+show tables;
+select * from dept_emp;
+
 #### L166: Introduction to JOINS
 
-
-select * from departments_dup;
-
-ALTER TABLE departments_dup
-CHANGE COLUMN dept_no dept_no CHAR(4) NULL;
-
-ALTER TABLE departments_dup
-CHANGE COLUMN dept_name dept_name VARCHAR(40)
-
+-- 
+-- select * from departments_dup;
+-- 
+-- ALTER TABLE departments_dup
+-- CHANGE COLUMN dept_no dept_no CHAR(4) NULL;
+-- 
+-- ALTER TABLE departments_dup
+-- CHANGE COLUMN dept_name dept_name VARCHAR(40)
+-- 
 
 
 ####
 #### Section 15: Subqueries
-
