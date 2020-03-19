@@ -753,7 +753,6 @@ CHANGE COLUMN dept_name dept_name VARCHAR(40)
 
 
 
-
 ####
 #### Section 15: Subqueries
 
