@@ -815,6 +815,67 @@ select * from departments_dup;
 
 ### L170: Inner Join - Part 1
 
+SELECT *
+FROM dept_manager_dup
+ORDER by dept_no;
+
+SELECT *
+FROM departments_dup
+ORDER by dept_no;
+
+### L171: Part 2
+
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    dept_manager_dup m
+        INNER JOIN
+    departments_dup d ON m.dept_no = d.dept_no
+ORDER BY m.dept_no;
+
+## extract a list info about managers' employee number, first_name, last_name, dept_no, hire_date
+
+select * from dept_manager_dup;
+select * from employees;
+
+SELECT m.emp_no, e.first_name, e.last_name, m.dept_no, e.hire_date
+FROM dept_manager_dup m
+INNER JOIN employees e
+ON m.emp_no = e.emp_no
+ORDER BY e.emp_no;
+
+SELECT 
+    m.dept_no, m.emp_no, m.from_date, m.to_date, d.dept_name
+FROM
+    dept_manager_dup m
+        INNER JOIN
+    departments_dup d ON m.dept_no = d.dept_no
+ORDER BY m.dept_no;
+
+### L175: Duplicate Records
+
+INSERT INTO dept_manager_dup
+VALUES ('110228', 'd003', '1992-03-21', '9999-01-01');
+
+insert into departments_dup
+values ('d009', 'Customer Service');
+
+SELECT *
+FROM dept_manager_dup
+ORDER by dept_no ASC;
+
+SELECT *
+FROM departments_dup
+ORDER by dept_no ASC;
+
+SELECT 
+    m.dept_no, m.emp_no, d.dept_name
+FROM
+    dept_manager_dup m
+        JOIN
+    departments_dup d ON m.dept_no = d.dept_no
+-- GROUP BY m.emp_no
+ORDER BY dept_no;
 
 ####
 #### Section 15: Subqueries
