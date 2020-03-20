@@ -1042,6 +1042,18 @@ FROM dept_manager;
 SELECT * FROM dept_manager_dup;
 
 
+# L184: JOIN and WHERE
+
+SELECT * from employees;
+
+SELECT * FROM salaries;
+
+SELECT e.emp_no, e.first_name, e.last_name, s.salary
+FROM employees e
+JOIN salaries s
+ON e.emp_no = s.emp_no
+WHERE s.salary > 145000;
+
 
 
 
