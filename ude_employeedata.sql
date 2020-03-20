@@ -1127,6 +1127,10 @@ WHERE
     e.emp_no <= 10010
 ORDER BY e.emp_no , d.dept_name;
 
+### L193: Using Aggregate Functions with Joins
+
+
+
 
 ####
 #### Section 15: Subqueries
