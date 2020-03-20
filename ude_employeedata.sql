@@ -1054,7 +1054,78 @@ JOIN salaries s
 ON e.emp_no = s.emp_no
 WHERE s.salary > 145000;
 
+-- SELECT @@global.sql_mode;
 
+SELECT 
+    e.first_name, e.last_name, e.hire_date, t.title
+FROM
+    employees e
+        JOIN
+    titles t ON e.emp_no = t.emp_no
+WHERE
+    e.first_name = 'Margareta'
+        AND e.last_name = 'Markovitch'
+ORDER BY e.emp_no;
+
+
+## L188: CROSS JOIN
+
+SELECT * FROM dept_manager;
+SELECT * FROM departments;
+
+SELECT 
+    dm.*, d.*
+FROM
+    dept_manager dm
+        CROSS JOIN
+    departments d
+ORDER BY dm.emp_no , d.dept_no;
+
+SELECT 
+    dm.*, d.*
+FROM
+    dept_manager dm,
+    departments d
+ORDER BY dm.emp_no , d.dept_no;
+
+
+SELECT 
+    dm.*, d.*
+FROM
+    dept_manager dm
+        JOIN
+    departments d
+ORDER BY dm.emp_no , d.dept_no;
+
+
+SELECT 
+    e.*, d.*
+FROM
+    departments d
+    CROSS JOIN
+    dept_manager dm
+    JOIN 
+    employees e ON dm.emp_no = e.emp_no
+ORDER BY dm.emp_no , d.dept_no;
+
+SELECT 
+    dm.*, d.*
+FROM
+    dept_manager dm
+        CROSS JOIN
+    departments d
+WHERE
+    d.dept_no = 'd009';
+    
+SELECT 
+    e.*, d.*
+FROM
+    employees e
+        CROSS JOIN
+    departments d
+WHERE
+    e.emp_no <= 10010
+ORDER BY e.emp_no , d.dept_name;
 
 
 ####
