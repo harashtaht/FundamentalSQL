@@ -1183,6 +1183,37 @@ FROM
     employees e ON m.emp_no = e.emp_no
 ;
 
+## Exercise
+-- 
+-- SELECT 
+-- 	e.emp_no, e.first_name, e.last_name, e.hire_date, t.title, t.from_date, d.dept_name
+--     FROM
+--     employees e
+--     JOIN
+--     titles t ON e.emp_no = t.emp_no
+--     JOIN
+--     dept_manager dm ON t.emp_no = dm.emp_no
+--     JOIN
+--     departments d ON dm.dept_no = d.dept_name
+-- ORDER BY e.emp_no;
+
+
+
+SELECT 
+	e.first_name, e.last_name, e.hire_date, t.title, dm.from_date, d.dept_name
+    FROM
+    employees e
+    JOIN
+    dept_manager dm ON e.emp_no = dm.emp_no
+    JOIN
+    departments d ON dm.dept_no = d.dept_no
+    JOIN
+    titles t ON e.emp_no = t.emp_no
+WHERE t.title = 'Manager'
+ORDER BY e.emp_no;
+
+## L197 : Tips and Tricks for Joins
+
 
 ####
 #### Section 15: Subqueries
