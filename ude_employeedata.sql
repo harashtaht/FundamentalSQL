@@ -1024,5 +1024,26 @@ ON
     m.emp_no = e.emp_no
 ORDER BY emp_no;
 
+
+use udemy_employee;
+
+SELECT * FROM departments_dup ORDER BY dept_no;
+
+SELECT * FROM dept_manager_dup ORDER BY dept_no;
+
+SELECT * FROM dept_manager;
+
+DROP table dept_manager_dup;
+
+CREATE TABLE dept_manager_dup
+SELECT *
+FROM dept_manager;
+
+SELECT * FROM dept_manager_dup;
+
+
+
+
+
 ####
 #### Section 15: Subqueries
