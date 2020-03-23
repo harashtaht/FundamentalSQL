@@ -1214,6 +1214,73 @@ ORDER BY e.emp_no;
 
 ## L197 : Tips and Tricks for Joins
 
+-- dept_name, average_salaary
+
+-- only 1 row
+SELECT 
+    d.dept_name, AVG(salary) as average_salary
+FROM
+    departments d
+        JOIN
+    dept_manager dm ON d.dept_no = dm.dept_no
+        JOIN
+    salaries s ON dm.emp_no = s.emp_no
+    
+GROUP BY d.dept_name
+HAVING average_salary >60000
+ORDER BY average_salary DESC;
+-- ORDER BY d.dept_no;
+    
+# Exercise
+-- SELECT
+-- 	COUNT(*) as quantity, e.gender
+-- FROM employees e
+-- JOIN
+-- titles t
+-- ON e.emp_no = t.emp_no
+-- GROUP BY e.gender;
+-- WHERE t.title = 'Manager'
+-- ORDER BY e.gender
+-- ;
+
+SELECT
+e.gender, COUNT(dm.emp_no)
+FROM
+employees e
+JOIN 
+dept_manager dm ON e.emp_no = dm.emp_no
+GROUP BY gender;
+
+## L200: UNION vs UNION ALL
+
+CREATE TABLE employees_dup (
+	emp_no int(11),
+    birth_date date,
+    first_name varchar(14),
+    last_name varchar(16),
+    gender enum('M', 'F'),
+    hire_date date
+    );
+
+INSERT INTO employees_dup
+SELECT
+	e.*
+FROM 
+	employees e
+LIMIT 20;
+
+SELECT * FROM employees_dup;
+
+INSERT INTO employees_dup VALUES
+('10001', '1953-09-02', 'Georgi', 'Facello', 'M', '1986-06-26');
+
+
+
+    
+
+
+
+
 
 ####
 #### Section 15: Subqueries
