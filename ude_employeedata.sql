@@ -562,8 +562,25 @@ VALUES(
 
 ########
 ########
-######## Section
-######## 11
+######## Section 11 : SQL UPDATE Statement
+
+# L133 : TCL's Commit and ROLLBACK
+
+# L134: The Update Statement part 1
+SELECT * from employees where emp_no = 999901;
+
+UPDATE employees 
+SET 
+    first_name = 'Stella',
+    last_name = 'Parkinson',
+    birth_date = '1990-12-31',
+    gender = 'F'
+WHERE
+    emp_no = 999901;
+
+# L136: UPDATE part 2
+
+
 
 
 ### Section 12 : The DELETE Statement
