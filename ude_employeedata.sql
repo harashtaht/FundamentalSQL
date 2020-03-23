@@ -1269,13 +1269,34 @@ FROM
 	employees e
 LIMIT 20;
 
+USE udemy_employee;
 SELECT * FROM employees_dup;
 
 INSERT INTO employees_dup VALUES
 ('10001', '1953-09-02', 'Georgi', 'Facello', 'M', '1986-06-26');
 
-##Test
+SELECT * FROM dept_manager;
 
+SELECT 
+    e.emp_no,
+    e.first_name,
+    e.last_name,
+    NULL AS dept_no,
+    NULL AS from_date
+FROM
+    employees_dup e
+WHERE
+    e.emp_no = 10001 
+UNION all SELECT 
+    NULL AS emp_no,
+    NULL AS first_name,
+    NULL AS last_name,
+    dm.dept_no,
+    dm.from_date
+FROM
+    dept_manager dm;
+
+## Exercise
     
 
 
