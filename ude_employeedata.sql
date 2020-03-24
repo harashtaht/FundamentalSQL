@@ -1351,3 +1351,21 @@ ORDER BY - a.emp_no DESC;
 
 ####
 #### Section 15: Subqueries
+####
+
+# L203: SQL Subqueries with IN nested inside WHERE
+
+SELECT * FROM dept_manager;
+SELECT * FROM employees;
+
+
+SELECT
+e.first_name, e.last_name
+FROM
+employees e
+WHERE
+e.emp_no IN (SELECT dm.emp_no
+FROM dept_manager dm)
+ORDER BY e.emp_no;
+
+# Ex 204
