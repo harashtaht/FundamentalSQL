@@ -1481,7 +1481,7 @@ CREATE TABLE emp_manager (
     );
     
 
-
+INSERT INTO emp_manager
 SELECT 
     A.*
 FROM
@@ -1501,7 +1501,7 @@ FROM
         e.emp_no <= 10020
     GROUP BY e.emp_no
     ORDER BY e.emp_no) AS A
-UNION SELECT 
+	UNION SELECT 
     B.*
 FROM
     (SELECT 
@@ -1558,3 +1558,28 @@ FROM
         e.emp_no = 110039
     GROUP BY e.emp_no
     ORDER BY e.emp_no) AS D;
+    
+SELECT * FROM emp_manager;
+    
+#### Section 16: Self Join)
+#### L214: Self Join
+
+SELECT 
+    e1.*
+FROM
+    emp_manager e1
+        JOIN
+    emp_manager e2 ON e1.emp_no = e2.manager_no
+WHERE
+    e2.emp_no IN (SELECT 
+            manager_no
+        FROM
+            emp_manager);
+            
+
+SELECT DISTINCT
+    e1.*
+FROM
+    emp_manager e1
+        JOIN
+    emp_manager e2 ON e1.emp_no = e2.manager_no;
