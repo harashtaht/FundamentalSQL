@@ -1583,3 +1583,37 @@ FROM
     emp_manager e1
         JOIN
     emp_manager e2 ON e1.emp_no = e2.manager_no;
+    
+    
+#### Section 17: SQL Views
+
+#L215
+SELECT * FROM dept_emp;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+USE udemy_employee;
+show tables;
+
+SELECT 
+    emp_no, from_date, to_date, COUNT(emp_no) AS num
+FROM
+    dept_emp
+GROUP BY emp_no
+HAVING num > 1; #doesn't work if ONLY_FULL_GROUP_BY is not run yet
+
+CREATE OR REPLACE VIEW v_dept_emp_latest_date AS
+    SELECT 
+        emp_no, MAX(from_date) AS from_date, MAX(to_date) AS to_date
+    FROM
+        dept_emp
+    GROUP BY emp_no;
+
+SELECT 
+        emp_no, MAX(from_date) AS from_date, MAX(to_date) AS to_date
+    FROM
+        dept_emp
+    GROUP BY emp_no;
+    
+SELECT * FROM udemy_employee.v_dept_emp_latest_date;
+
