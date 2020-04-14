@@ -2004,3 +2004,18 @@ END$$
 DELIMITER ;
 
 ## L238: Session Variables
+-- @ - indicates that we're creating mySQL session variables
+
+SET @s_var1 = 3;
+
+SELECT @s_var1;
+-- after this is run, if we open another query tab. the value still the same.
+-- if we select this variable from another CONNECTION, it'll show null
+
+## L239: Global Variables
+-- apply to all connections related to a specific server
+-- system variables: pre=defined variables in MySQL suitable for this job
+-- .max_connections(), .max_join_size()
+
+## L240: User-Defined vs System Variables
+
