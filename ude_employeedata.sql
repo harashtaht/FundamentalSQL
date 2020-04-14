@@ -1675,3 +1675,33 @@ CALL average_salary();
 
 ## L224: Another Way to Create Stored Procedure
 
+-- Right click below Stored Procedures
+
+CALL select_salaries(); -- 1000
+
+-- How to delete Procedure
+-- DROP PROCEDURE select_employees;
+
+## L225: Stored Procedure With an Input Parameter
+-- Stored procedures can take an input value and then use it in the query or queries, 
+-- written in the body of procedure.
+
+SELECT * FROM employees LIMIT 10;
+SELECT * FROM salaries LIMIT 10;
+
+SELECT
+	e.first_name, e.last_name, s.salary, s.from_date, s.to_date
+FROM
+	employees e
+    JOIN
+    salaries s
+    ON e.emp_no = s.emp_no
+    WHERE e.emp_no = s.emp_no
+;
+    
+SELECT e.*, s.salary
+FROM employees e
+JOIN salaries s
+	ON e.emp_no = s.emp_no;
+    
+SELECT * FROM salaries;
