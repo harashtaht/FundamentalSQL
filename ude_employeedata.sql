@@ -1636,3 +1636,5 @@ SELECT * FROM v_salary_manager;
 SHOW DATABASES;
 USE udemy_employee;
 SHOW TABLES;
+
+# Delimiter ';' -> $$ or // in Stored Procedure
