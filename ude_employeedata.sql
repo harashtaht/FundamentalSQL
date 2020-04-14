@@ -1803,8 +1803,12 @@ FROM employees
 WHERE first_name = 'Georgi'
 AND last_name = 'Facello';
 
-CALL udemy_employee.emp_info('Bezalel', 'Simmel', @p_emp_no);
+-- How to run the query without clicks
+
+CALL udemy_employee.emp_info('Kyoichi', 'Maliniak', @p_emp_no);
+SELECT @p_emp_no as p;
 
 -- Must read more here:
 -- https://code.tutsplus.com/articles/an-introduction-to-stored-procedures-in-mysql-5--net-17843
+
 
