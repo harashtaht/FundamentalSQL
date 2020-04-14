@@ -1656,3 +1656,22 @@ DELIMITER ;
 
 CALL udemy_employee.select_employees(); -- Run the Stored Procedure
 
+call select_employees();
+
+SELECT COUNT(*) FROM employees;
+
+SELECT * FROM employees LIMIT 10;
+SELECT * FROM salaries LIMIT 10;
+
+DELIMITER $$
+CREATE PROCEDURE average_salary()
+BEGIN
+	SELECT AVG(salary) FROM salaries;
+END$$
+
+DELIMITER ;
+
+CALL average_salary();
+
+## L224: Another Way to Create Stored Procedure
+
