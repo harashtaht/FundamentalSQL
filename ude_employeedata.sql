@@ -1720,6 +1720,8 @@ GROUP BY e.emp_no;
 
 DROP procedure if EXISTS emp_salary;
 
+-- Procedure for showing salary based on emp_no
+
 DELIMITER $$
 USE udemy_employee $$
 CREATE PROCEDURE emp_salary(IN p_emp_no INTEGER)
@@ -1733,9 +1735,28 @@ FROM
 WHERE
 	e.emp_no = p_emp_no;
 END$$
+DELIMITER;
 
+-- Procedure for showing average salary based on emp_no
+
+DELIMITER $$
+USE udemy_employee $$
+CREATE PROCEDURE emp_avg_salary(IN p_emp_no INTEGER)
+BEGIN
+SELECT
+	e.first_name, e.last_name, AVG(s.salary)
+    FROM
+    employees e
+    JOIN
+    salaries s ON e.emp_no = s.emp_no
+WHERE
+	e.emp_no = p_emp_no;
+END$$
+DELIMITER;
 DELIMITER ;
 
 CALL emp_salary(10001);
+CALL emp_avg_salary(10001);
 
+## L226: Stored Procedure with an Output Parameter
 
