@@ -1917,3 +1917,25 @@ WHERE emp_no = 10001
 ORDER BY from_date DESC;
 
 ## L236: Conclusion
+
+## Stored Procedure: 
+-- if you need to obtain more than one value
+-- can be used for INSERT UPDATE DELETE
+-- use CALL, can't be used in SELECT statement
+
+## Function: 
+-- if only need one value
+-- must not be used for insert, update, delete
+-- since it must ALWAYS have an output
+-- use SELECT, can be used in select statement
+
+SET @v_emp_no = 11300;
+SELECT 
+    emp_no,
+    first_name,
+    last_name,
+    F_EMP_AVG_SALARY(@v_emp_no) AS avg_salary
+FROM
+    employees
+WHERE
+    emp_no = @v_emp_no;
