@@ -1617,3 +1617,19 @@ SELECT
     
 SELECT * FROM udemy_employee.v_dept_emp_latest_date;
 
+## Exercise
+
+USE udemy_employee;
+
+SELECT * from dept_manager;
+SELECT * FROM salaries;
+
+CREATE OR REPLACE VIEW v_salary_manager AS
+SELECT ROUND(avg(salary),2)
+FROM
+dept_manager dm JOIN salaries s ON dm.emp_no = s.emp_no;
+
+SELECT * FROM v_salary_manager;
+
+#### Section 18: Stored Routine
+
