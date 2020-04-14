@@ -1810,5 +1810,22 @@ SELECT @p_emp_no as p;
 
 -- Must read more here:
 -- https://code.tutsplus.com/articles/an-introduction-to-stored-procedures-in-mysql-5--net-17843
+-- Found: https://asprunner.com/forums/topic/21647-how-to-call-a-mysql-stored-procedure-with-output-parameters/
 
+## L229; Variables
+
+SET @v_avg_salary = 0;
+CALL udemy_employee.emp_avg_salary_out(11300, @v_avg_salary);
+SELECT @v_avg_salary;
+
+-- 
+SET @p_emp_no = 0;
+CALL udemy_employee.emp_info('Kyoichi', 'Maliniak', @p_emp_no);
+SELECT @p_emp_no;
+
+SET @v_emp_no = 0;
+CALL udemy_employee.emp_info('Kyoichi', 'Maliniak', @v_emp_no);
+SELECT @v_emp_no;
+
+## L232: User-defined functions in MYSQL
 
