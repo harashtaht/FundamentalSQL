@@ -1654,3 +1654,5 @@ END$$
 
 DELIMITER ;
 
+CALL udemy_employee.select_employees(); -- Run the Stored Procedure
+
