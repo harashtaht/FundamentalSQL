@@ -1633,3 +1633,6 @@ SELECT * FROM v_salary_manager;
 
 #### Section 18: Stored Routine
 
+SHOW DATABASES;
+USE udemy_employee;
+SHOW TABLES;
