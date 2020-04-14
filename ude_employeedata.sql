@@ -1939,3 +1939,14 @@ FROM
     employees
 WHERE
     emp_no = @v_emp_no;
+    
+    
+#### Section 19: Advanced SQL Topics
+## L237: Types of MySQL Var : Local Variables
+
+-- Difference in variables are in the SCOPE used
+-- There are 3 types: Local, Session and Global
+
+-- Local: A variable that is visible only in the BEGIN - END block in which it was created
+-- DECLARE is a keyword that can be used when creating LOCAL VARIABLES only
+
