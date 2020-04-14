@@ -2019,3 +2019,6 @@ SELECT @s_var1;
 
 ## L240: User-Defined vs System Variables
 
+-- SET GLOBAL max_connections = 1000;
+-- SET @@global.max_connections = 1;
+
