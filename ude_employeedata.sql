@@ -1690,12 +1690,13 @@ SELECT * FROM employees LIMIT 10;
 SELECT * FROM salaries LIMIT 10;
 
 SELECT
-	e.first_name, e.last_name, s.salary, s.from_date, s.to_date
+	e.first_name, e.last_name, AVG(s.salary), s.from_date, s.to_date
 FROM
 	employees e
     JOIN
     salaries s
     ON e.emp_no = s.emp_no
+    GROUP BY e.emp_no
     WHERE e.emp_no = s.emp_no
 ;
     
@@ -1705,3 +1706,36 @@ JOIN salaries s
 	ON e.emp_no = s.emp_no;
     
 SELECT * FROM salaries;
+
+-- Show emp_no and salary
+SELECT 
+    e.emp_no, AVG(s.salary) AS averagesal
+FROM
+    employees e
+        JOIN
+    salaries s ON e.emp_no = s.emp_no
+GROUP BY e.emp_no;
+
+-- .. Cont. L225 Delimiter Stored Proc With Input
+
+DROP procedure if EXISTS emp_salary;
+
+DELIMITER $$
+USE udemy_employee $$
+CREATE PROCEDURE emp_salary(IN p_emp_no INTEGER)
+BEGIN
+SELECT
+	e.first_name, e.last_name, s.salary, s.from_date, s.to_date
+FROM
+	employees e
+    JOIN
+    salaries s ON e.emp_no = s.emp_no
+WHERE
+	e.emp_no = p_emp_no;
+END$$
+
+DELIMITER ;
+
+CALL emp_salary(10001);
+
+
