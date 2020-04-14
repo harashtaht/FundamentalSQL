@@ -1638,3 +1638,19 @@ USE udemy_employee;
 SHOW TABLES;
 
 # Delimiter ';' -> $$ or // in Stored Procedure
+
+###
+## Section 18
+## L220 : Stored Procedure Examples Part 1
+
+DROP PROCEDURE IF EXISTS select_employees;
+
+DELIMITER $$
+CREATE PROCEDURE select_employees()
+BEGIN
+	SELECT * FROM employees
+    LIMIT 1000;
+END$$
+
+DELIMITER ;
+
