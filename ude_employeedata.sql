@@ -2023,3 +2023,47 @@ SELECT @s_var1;
 -- SET @@global.max_connections = 1;
 -- 
 
+
+## L242: Triggers - Exercise
+# file: original-4
+
+DELIMITER $$
+
+CREATE TRIGGER trig_hire_date
+BEFORE INSERT ON employees
+FOR EACH ROW
+BEGIN 
+
+	IF NEW.hire_date > date_format(sysdate(), '%Y-%M-%D') THEN
+    SET NEW.hire_date =  date_format(sysdate(), '%Y-%M-%D');
+    END IF;
+END $$
+
+DELIMITER ;
+
+INSERT employees VALUES ('999904', '1970-01-31', 'John', 'Johnson', 'M', '2025-01-01');
+
+SELECT * from employees ORDER BY hire_date DESC;
+
+
+## L243 : MySQL Indexes
+
+SELECT * FROM employees WHERE hire_date > '2000-01-01';
+
+CREATE INDEX i_hire_date ON employees(hire_date);
+
+SELECT * FROM employees WHERE first_name = 'Georgi' AND last_name = 'Facello';
+
+CREATE INDEX i_composite ON employees(first_name, last_name);
+
+-- Primary and unique keys are MySQL indexes
+
+SHOW INDEX FROM employees FROM udemy_employee;
+SHOW INDEX FROM employees;
+
+ALTER TABLE employees
+DROP INDEX i_hire_date;
+
+SELECT * FROM salaries WHERE salary>89000;
+
+CREATE INDEX i_salary ON salaries(salary);
