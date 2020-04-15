@@ -30,10 +30,13 @@
 # Perfect! Let’s execute some code.  
 
 # First, in case you are just starting Workbench, select “Employees” as your default database.
-USE employees;
+
+USE udemy_employee;
+SHOW TABLES;
 
 # Then, execute a COMMIT statement, because the triggers we are about to create will make some changes to 
-# the state of the data in our database. At the end of the exercise, we will ROLLBACK up to the moment of this COMMIT.  
+# the state of the data in our database. At the end of the exercise, we will ROLLBACK up to the moment of this COMMIT.
+  
 COMMIT;
 
 # We said triggers are a type of stored program. Well, one could say the syntax resembles that of stored procedures, couldn’t they?
