@@ -2103,3 +2103,23 @@ SELECT
     IF(gender = 'M', 'Male', 'Female') AS gender
 FROM
     employees;
+    
+SELECT 
+    dm.emp_no,
+    e.first_name,
+    e.last_name,
+    MAX(s.salary) - MIN(s.salary) AS salary_difference,
+    CASE
+        WHEN MAX(s.salary) - MIN(s.salary) > 30000 THEN 'Salary raised by more than 30K$'
+        WHEN MAX(s.salary) - MIN(s.salary) BETWEEN 20000 AND 30000 THEN 'Salary raised more than 20K but less than 30K'
+        ELSE 'Salary raised by less than 20K$'
+    END AS salary_increase
+FROM
+    dept_manager dm
+        JOIN
+    employees e ON e.emp_no = dm.emp_no
+        JOIN
+    salaries s ON s.emp_no = dm.emp_no
+GROUP BY s.emp_no;
+
+-- Exercise L250
