@@ -2123,3 +2123,14 @@ FROM
 GROUP BY s.emp_no;
 
 -- Exercise L250
+
+SELECT * FROM dept_manager;
+
+SELECT 
+	e.emp_no, 
+	e.first_name, 
+    e.last_name, 
+    CASE WHEN dm.emp_no IS NOT NULL THEN 'Manager' ELSE 'Employee' AS is_manager
+FROM employees e 
+LEFT JOIN dept_manager dm
+ON e.emp_no = dm.emp_no;
