@@ -2130,7 +2130,46 @@ SELECT
 	e.emp_no, 
 	e.first_name, 
     e.last_name, 
-    CASE WHEN dm.emp_no IS NOT NULL THEN 'Manager' ELSE 'Employee' AS is_manager
+    CASE WHEN dm.emp_no IS NOT NULL THEN 'Manager' ELSE 'Employee' END AS is_manager
 FROM employees e 
 LEFT JOIN dept_manager dm
-ON e.emp_no = dm.emp_no;
+ON e.emp_no = dm.emp_no
+WHERE e.emp_no >109990;
+
+-- Exercise 2
+
+SELECT 
+	s.emp_no, 
+    e.first_name, 
+    e.last_name,
+    MAX(s.salary) - MIN(s.salary) as salary_difference,
+    CASE WHEN MAX(s.salary) - MIN(s.salary) > 30000 THEN 'Yes, more'
+    ELSE 'No, less' END AS salaryraise_30K
+FROM
+    dept_manager dm
+        JOIN
+    employees e ON e.emp_no = dm.emp_no
+        JOIN
+    salaries s ON s.emp_no = dm.emp_no
+GROUP BY s.emp_no;
+
+-- Exercise 3
+
+SELECT 
+    e.emp_no,
+    e.first_name,
+    e.last_name,
+    -- MAX(dp.to_date),
+    CASE
+        WHEN MAX(dp.to_date) > SYSDATE() THEN 'Is still employed'
+        ELSE 'Not an employee anymore'
+    END AS current_employee
+FROM
+    employees e
+        JOIN
+    dept_emp dp ON dp.emp_no = e.emp_no
+GROUP BY dp.emp_no
+LIMIT 100;
+
+SELECT * FROM dept_emp;
+
