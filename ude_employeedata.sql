@@ -2173,3 +2173,5 @@ LIMIT 100;
 
 SELECT * FROM dept_emp;
 
+### Section 20: SQL and Tableau Introduction
+# L256: Advantages of Software Integration
