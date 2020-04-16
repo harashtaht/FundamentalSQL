@@ -2175,3 +2175,50 @@ SELECT * FROM dept_emp;
 
 ### Section 20: SQL and Tableau Introduction
 # L256: Advantages of Software Integration
+
+
+## Section 21: Combining SQL and Tableau
+
+## 	Task 1 	##
+/* Create a visualization that provides a breakdown between the male and 
+female employees working in the company each year starting from 1990*/
+## 			##
+
+show databases;
+use employees_mod;
+show tables;
+
+select * from t_employees;
+
+select gender, hire_date from t_employees
+WHERE hire_date > 1994;
+
+SELECT 
+	COUNT(emp_no),
+    YEAR(from_date) AS calendar_year
+FROM
+    t_dept_emp
+GROUP BY calendar_year
+HAVING calendar_year>1990
+ORDER BY calendar_year ASC;
+
+SELECT 
+	COUNT(de.emp_no),
+    e.gender,
+    YEAR(de.from_date) AS calendar_year
+FROM
+    t_dept_emp de
+JOIN
+	t_employees e ON de.emp_no = e.emp_no
+GROUP BY calendar_year
+HAVING calendar_year>1990
+ORDER BY calendar_year ASC;
+
+SELECT 
+	de.emp_no,
+    e.gender,
+    YEAR(de.from_date) AS calendar_year
+FROM 
+	t_dept_emp de
+JOIN
+	t_employees e ON de.emp_no = e.emp_no;
