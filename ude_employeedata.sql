@@ -2356,3 +2356,53 @@ GROUP BY
 	d.dept_no, e.gender, calendar_year
 HAVING calendar_year <=2002
 ORDER BY d.dept_no;
+
+## Task 4
+
+/* Create SQL Procedure that will allow obtaining average male and female
+salary per department within a certain salary range.
+Let this range be defined by two values the user can insert when 
+calling the procedure*/
+
+USE employees_mod;
+SHOW tables;
+
+SELECT MIN(salary) FROM t_salaries; #31350
+SELECT MAX(salary) FROM t_salaries; #160377
+
+# Task 4 Solution
+
+DELIMITER $$
+CREATE PROCEDURE filter_salary(in p_min_salary FLOAT, in p_max_salary FLOAT)
+BEGIN
+SELECT
+	e.gender, d.dept_name, AVG(s.salary) as avg_salary
+FROM
+	t_salaries s
+    JOIN 
+    t_employees e ON s.emp_no = e.emp_no
+    JOIN
+    t_dept_emp de ON de.emp_no = e.emp_no
+    JOIN
+    t_departments d ON d.dept_no = de.dept_no
+    WHERE s.salary BETWEEN p_min_salary AND p_max_salary
+GROUP BY d.dept_no, e.gender;
+END $$
+DELIMITER $$
+
+CALL filter_salary(50000, 90000);
+CALL filter_salary(75000, 90000);
+
+-- 
+-- SELECT
+-- 	e.gender, d.dept_name, AVG(s.salary) as avg_salary
+-- FROM
+-- 	t_salaries s
+--     JOIN 
+--     t_employees e ON s.emp_no = e.emp_no
+--     JOIN
+--     t_dept_emp de ON de.emp_no = e.emp_no
+--     JOIN
+--     t_departments d ON d.dept_no = de.dept_no
+--     WHERE s.salary BETWEEN 50000 AND 80000
+-- GROUP BY d.dept_no, e.gender;
