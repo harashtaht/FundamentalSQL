@@ -2247,5 +2247,37 @@ to the number of female managers
 from different departments for each year,
 starting from 1990 */
 
+SELECT * from t_dept_manager;
 
+SELECT 
+	dm.dept_no,
+    e.gender,
+    COUNT(dm.emp_no) AS num_of_manager
+FROM
+	t_dept_manager dm
+JOIN
+	t_employees e
+ON dm.emp_no = e.emp_no
+GROUP BY dm.dept_no, e.gender
+ORDER BY dm.dept_no;
 
+SELECT * FROM t_departments;
+
+SELECT 
+	d.dept_name,
+    e.gender,
+    dm.emp_no,
+    dm.from_date,
+    dm.to_date,
+    YEAR(e.hire_date) as calendar_year
+FROM
+	t_departments d
+    JOIN
+    t_dept_manager dm
+	ON dm.dept_no = d.dept_no
+    JOIN
+    t_employees e
+    ON e.emp_no = dm.emp_no
+HAVING dm.from_date > 1990
+;
+-- ORDER BY dm.from_date;
