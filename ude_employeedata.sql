@@ -2221,4 +2221,22 @@ SELECT
 FROM 
 	t_dept_emp de
 JOIN
-	t_employees e ON de.emp_no = e.emp_no;
+	t_employees e ON de.emp_no = e.emp_no
+HAVING calendar_year>1990;
+
+SELECT DISTINCT emp_no, from_date, to_date
+FROM t_dept_emp;
+
+# Task 1 Solution:
+SELECT 
+	YEAR(d.from_date) as calendar_year,
+    e.gender,
+    COUNT(e.emp_no) as num_of_employees
+FROM
+	t_employees e
+    JOIN
+    t_dept_emp d on d.emp_no = e.emp_no
+GROUP BY calendar_year, e.gender
+HAVING calendar_year>=1990
+ORDER BY calendar_year;
+
