@@ -2393,7 +2393,8 @@ DELIMITER $$
 CALL filter_salary(50000, 90000);
 CALL filter_salary(75000, 90000);
 
--- 
+
+
 -- SELECT
 -- 	e.gender, d.dept_name, AVG(s.salary) as avg_salary
 -- FROM
