@@ -2390,8 +2390,11 @@ GROUP BY d.dept_no, e.gender;
 END $$
 DELIMITER $$
 
-CALL filter_salary(50000, 90000);
 CALL filter_salary(75000, 90000);
+
+
+CALL filter_salary(50000, 90000);
+
 
 
 
