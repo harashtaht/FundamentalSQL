@@ -51,3 +51,17 @@ FROM
     employees e
 WHERE
     e.emp_no <= 10040;
+
+
+## Exercise 4
+
+SELECT * FROM employees
+WHERE YEAR(hire_date) =2000;
+
+-- SELECT COUNT(emp_no), MONTH(hire_date) FROM employees
+-- GROUP BY MONTH(hire_date)
+-- ORDER BY MONTH(hire_date) ASC
+-- ;
+
+
+## Exercise 5
