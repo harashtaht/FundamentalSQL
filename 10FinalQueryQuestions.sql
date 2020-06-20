@@ -65,3 +65,21 @@ WHERE YEAR(hire_date) =2000;
 
 
 ## Exercise 5
+
+SELECT COUNT(*) FROM titles 
+WHERE title = 'Engineer';
+
+SELECT COUNT(*) FROM titles
+WHERE title LIKE ('%engineer%');
+
+
+SELECT COUNT(*) FROM titles 
+WHERE title = 'Senior Engineer';
+
+SELECT COUNT(*) FROM titles
+WHERE title LIKE ('%senior engineer%');
+
+SELECT COUNT(*) FROM employees WHERE first_name LIKE ('%ichi%');
+
+
+## Exercise 6
