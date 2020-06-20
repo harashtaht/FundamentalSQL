@@ -3,6 +3,7 @@
 /* Find the Average Salary of male and female 
 employees in each department
 */
+SHOW databases;
 
 USE udemy_employee;
 SHOW TABLES;
