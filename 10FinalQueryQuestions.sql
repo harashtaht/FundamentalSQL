@@ -83,3 +83,6 @@ SELECT COUNT(*) FROM employees WHERE first_name LIKE ('%ichi%');
 
 
 ## Exercise 6
+
+SELECT e.emp_no, e.first_name, e.last_name, e.gender, de.dept_no FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no
+WHERE e.emp_no = 10010;
