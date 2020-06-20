@@ -30,17 +30,24 @@ FROM
 encountered in the dept_emp table. Then, find the highest department number. */
 
 SELECT 
-    MIN(dept_no), MAX(dept_no)
+    MIN(dept_no) AS low_dept_no, MAX(dept_no) AS hi_dept_no
 FROM
     dept_emp;
     
 ## Exercise 3
 
 SELECT 
-    e.emp_no, de.dept_no
+    emp_no,
+    (SELECT 
+            MIN(dept_no)
+        FROM
+            dept_emp de
+        WHERE
+            e.emp_no = de.emp_no) AS dept_no,
+	CASE 
+		WHEN emp_no <= 10020 THEN '110022' ELSE '110039'
+    END AS manager
 FROM
     employees e
-        JOIN
-    dept_emp de ON e.emp_no = de.emp_no
-HAVING e.emp_no <= 10040
-ORDER BY e.emp_no ASC;
+WHERE
+    e.emp_no <= 10040;
