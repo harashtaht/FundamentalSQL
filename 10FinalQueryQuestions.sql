@@ -84,5 +84,36 @@ SELECT COUNT(*) FROM employees WHERE first_name LIKE ('%ichi%');
 
 ## Exercise 6
 
+USE udemy_employee;
+
 SELECT e.emp_no, e.first_name, e.last_name, e.gender, de.dept_no FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no
 WHERE e.emp_no = 10010;
+
+SELECT * from departments;
+SELECT * FROM dept_emp;
+
+DROP PROCEDURE IF EXISTS last_department;
+-- 
+DELIMITER $$
+CREATE PROCEDURE last_dept (in p_emp_no integer)
+BEGIN
+SELECT 
+	e.emp_no, d.dept_no, d.dept_name
+FROM
+	employees e
+	JOIN 
+    dept_emp de ON e.emp_no = de.emp_no
+    JOIN
+	departments d ON de.dept_no = d.dept_no
+WHERE
+	e.emp_no = p_emp_no
+    AND de.from_date = (SELECT MAX(from_date)
+    FROM dept_emp
+    WHERE 
+    emp_no = p_emp_no
+    );
+END$$
+
+DELIMITER ;
+
+CALL last_dept(10010);
