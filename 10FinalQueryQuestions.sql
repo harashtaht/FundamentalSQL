@@ -117,3 +117,7 @@ END$$
 DELIMITER ;
 
 CALL last_dept(10010);
+
+
+## Exercise 7
+
