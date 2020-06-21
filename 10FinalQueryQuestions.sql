@@ -121,3 +121,18 @@ CALL last_dept(10010);
 
 ## Exercise 7
 
+SELECT COUNT(*) from salaries
+WHERE salary >= 100000 AND 
+	((to_date - from_date) > 365);
+    
+SELECT
+    COUNT(*)
+FROM
+    salaries
+WHERE
+    salary >= 100000
+        AND ((to_date - from_date) >= (60 * 60 * 24 * 7 * 52));
+        
+# ??
+
+## Exercise 8
